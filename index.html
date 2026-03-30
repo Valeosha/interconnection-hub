@@ -42,6 +42,21 @@ body { font-family: var(--font-b); background: transparent; color: var(--ink); -
 .card.featured { background: var(--ink); border-color: var(--ink); }
 .card.featured::before { background: var(--red-mid); transform: scaleX(1); }
 .card.featured:hover { box-shadow: 0 16px 48px rgba(0,0,0,0.22); }
+.card.featured-red { background: #FDF0ED; border-color: rgba(200,49,10,0.2); }
+.card.featured-red::before { background: var(--red); transform: scaleX(1); }
+.card.featured-red:hover { box-shadow: 0 10px 36px rgba(200,49,10,0.12); border-color: rgba(200,49,10,0.35); }
+.card.featured-red .card-idx { color: rgba(200,49,10,0.4); }
+.card.featured-red .card-icon { background: rgba(200,49,10,0.08); border-color: rgba(200,49,10,0.2); }
+.card.featured-red .card-icon .material-symbols-outlined { color: var(--red); }
+.card.featured-red:hover .card-icon { background: rgba(200,49,10,0.14); }
+.card.featured-red .card-title { color: var(--ink); }
+.card.featured-red .card-desc { color: rgba(10,10,10,0.55); }
+.card.featured-red .card-foot { border-top-color: rgba(200,49,10,0.12); }
+.card.featured-red .card-cta { color: rgba(200,49,10,0.6); }
+.card.featured-red:hover .card-cta { color: var(--red); }
+.card.featured-red .card-arrow { background: rgba(200,49,10,0.08); border-color: rgba(200,49,10,0.2); }
+.card.featured-red .card-arrow .material-symbols-outlined { color: var(--red); }
+.card.featured-red:hover .card-arrow { background: rgba(200,49,10,0.14); border-color: var(--red); }
 
 .card-meta { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
 .card-idx { font-family: var(--font-m); font-size: 9px; font-weight: 300; color: var(--ink-5); letter-spacing: 0.08em; }
@@ -156,7 +171,7 @@ body { font-family: var(--font-b); background: transparent; color: var(--ink); -
     <div class="card-foot"><span class="card-cta">Launch Dashboard</span><div class="card-arrow"><span class="material-symbols-outlined">arrow_forward</span></div></div>
   </a>
 
-  <a class="card featured reveal d6" href="https://app.powerbi.com/links/zXxSvIRWR7?ctid=7d1308ea-7579-4056-a855-9217e17ccc29&pbi_source=linkShare&bookmarkGuid=14b922cc-c253-43cf-8d92-f1cb8bf87455" target="_blank">
+  <a class="card featured-red reveal d6" href="https://app.powerbi.com/links/zXxSvIRWR7?ctid=7d1308ea-7579-4056-a855-9217e17ccc29&pbi_source=linkShare&bookmarkGuid=14b922cc-c253-43cf-8d92-f1cb8bf87455" target="_blank">
     <div class="card-meta"><span class="card-idx">06 / 06</span><span class="tag tag-priority">Priority</span></div>
     <div class="card-icon"><span class="material-symbols-outlined">insights</span></div>
     <div class="card-title">Executive Summary</div>
