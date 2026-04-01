@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Dashboard Hub · Hero</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet"/>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --red:   #C8310A;
+  --ink:   #0F0F0F;
+  --ink-4: #6B6B6B;
+  --white: #FFFFFF;
+  --font-d: 'Plus Jakarta Sans', sans-serif;
+  --font-m: 'DM Mono', monospace;
+}
+
+body {
+  font-family: var(--font-d);
+  background: var(--white);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.bg-grid {
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(10,10,10,0.06) 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
+  z-index: 0;
+}
+.bg-grid::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, transparent 30%, rgba(255,255,255,0.9) 100%);
+}
+
+.wrapper {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 64px 48px;
+}
+
+/* Label */
+.label-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 36px;
+  opacity: 0;
+  animation: fadeUp 0.55s cubic-bezier(0.22,1,0.36,1) 0.05s forwards;
+}
+.label-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--red);
+  flex-shrink: 0;
+}
+.label-text {
+  font-family: var(--font-m);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-4);
+  font-weight: 400;
+}
+.label-text strong {
+  color: var(--red);
+  font-weight: 400;
+}
+
+/* Two-column layout */
+.content-row {
+  display: flex;
+  align-items: center;
+  gap: 64px;
+}
+
+/* Left: Title */
+.title-block {
+  flex-shrink: 0;
+  opacity: 0;
+  animation: fadeUp 0.6s cubic-bezier(0.22,1,0.36,1) 0.15s forwards;
+}
+
+.title-line {
+  display: block;
+  line-height: 1;
+  letter-spacing: -0.035em;
+}
+.title-main {
+  font-size: clamp(48px, 7.5vw, 88px);
+  font-weight: 800;
+  color: var(--ink);
+}
+.title-light {
+  font-size: clamp(48px, 7.5vw, 88px);
+  font-weight: 300;
+  color: rgba(10,10,10,0.2);
+}
+
+/* Right: Description */
+.desc-block {
+  flex: 1;
+  opacity: 0;
+  animation: fadeUp 0.6s cubic-bezier(0.22,1,0.36,1) 0.28s forwards;
+}
+
+.desc-rule {
+  width: 28px;
+  height: 1.5px;
+  background: var(--red);
+  margin-bottom: 18px;
+}
+
+.desc-text {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--ink-4);
+  line-height: 1.8;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: none; }
+}
+
+@media (max-width: 720px) {
+  .content-row { flex-direction: column; align-items: flex-start; gap: 32px; }
+  .wrapper { padding: 48px 24px; }
+  .title-main, .title-light { font-size: 52px; }
+}
+</style>
+</head>
+<body>
+
+<div class="bg-grid"></div>
+
+<div class="wrapper">
+
+  <div class="label-row">
+    <div class="label-dot"></div>
+    <span class="label-text"><strong>LLA</strong> · Digital Performance Hub</span>
+  </div>
+
+  <div class="content-row">
+    <div class="title-block">
+      <span class="title-line title-main">Digital</span>
+      <span class="title-line title-light">Active</span>
+      <span class="title-line title-main">Dashboards</span>
+    </div>
+
+    <div class="desc-block">
+      <div class="desc-rule"></div>
+      <p class="desc-text">
+        Unified access hub for Liberty Latin America's Digital &amp; Roaming Interconnection dashboards — bringing together all team reporting into a single, organized point of access for streamlined visibility and collaboration.
+      </p>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
