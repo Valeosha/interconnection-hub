@@ -61,6 +61,31 @@ body { font-family: var(--font-b); background: transparent; color: var(--ink); -
 .d1{transition-delay:0.04s}.d2{transition-delay:0.08s}.d3{transition-delay:0.12s}
 .d4{transition-delay:0.16s}.d5{transition-delay:0.20s}.d6{transition-delay:0.24s}
 
+/* Roaming & Carrier section */
+.section { margin-top: 36px; }
+.section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+.section-badge { display: flex; align-items: center; gap: 8px; background: var(--bg); border: 1px solid var(--rule-md); border-radius: 10px; padding: 8px 14px; }
+.section-badge .material-symbols-outlined { font-size: 16px; color: var(--ink-4); }
+.section-badge-label { font-family: var(--font-m); font-size: 9.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-4); }
+.section-line { flex: 1; height: 1px; background: var(--rule-md); }
+.section-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+
+/* Roaming cards — same base but with a subtle blue-grey tint accent */
+.card-rc { background: var(--white); border: 1px solid var(--rule-md); border-radius: 14px; padding: 16px 20px 14px; text-decoration: none; color: inherit; display: flex; flex-direction: column; position: relative; overflow: hidden; transition: box-shadow 0.25s var(--ease), border-color 0.25s, transform 0.25s var(--ease); }
+.card-rc:hover { box-shadow: 0 10px 36px rgba(0,0,0,0.08), 0 2px 8px rgba(0,0,0,0.04); border-color: rgba(59,99,149,0.3); transform: translateY(-2px); }
+.card-rc::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: #3B6395; transform: scaleX(0); transform-origin: left; transition: transform 0.35s var(--ease); border-radius: 14px 14px 0 0; }
+.card-rc:hover::before { transform: scaleX(1); }
+.card-rc .card-icon { width: 34px; height: 34px; border-radius: 8px; border: 1px solid var(--rule-md); background: var(--bg); display: grid; place-items: center; flex-shrink: 0; transition: background 0.2s, border-color 0.2s; }
+.card-rc:hover .card-icon { background: rgba(59,99,149,0.07); border-color: rgba(59,99,149,0.25); }
+.card-rc:hover .card-icon .material-symbols-outlined { color: #3B6395; }
+.card-rc .card-foot { border-top-color: var(--rule); }
+.card-rc:hover .card-cta { color: #3B6395; }
+.card-rc:hover .card-arrow { border-color: #3B6395; background: rgba(59,99,149,0.07); }
+.card-rc:hover .card-arrow .material-symbols-outlined { color: #3B6395; }
+
+@media (max-width: 900px) { .section-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .section-grid { grid-template-columns: 1fr; } }
+
 @media (max-width: 900px) {
   .grid { grid-template-columns: 1fr 1fr; }
 }
@@ -163,6 +188,38 @@ body { font-family: var(--font-b); background: transparent; color: var(--ink); -
     <div class="card-foot"><span class="card-cta">Launch Dashboard</span><div class="card-arrow"><span class="material-symbols-outlined">arrow_forward</span></div></div>
   </a>
 
+</div>
+
+<!-- Roaming & Carrier Section -->
+<div class="section reveal">
+  <div class="section-header">
+    <div class="section-badge">
+      <span class="material-symbols-outlined">cell_tower</span>
+      <span class="section-badge-label">Roaming &amp; Carrier</span>
+    </div>
+    <div class="section-line"></div>
+  </div>
+  <div class="section-grid">
+
+    <a class="card-rc reveal d1" href="https://app.powerbi.com/groups/35fd0f8e-8d43-4f2e-afd1-7d0ea473c4df/reports/24c7e161-2608-4546-b468-a7ac4d2587d4/1337ead132349b272b59?experience=power-bi" target="_blank">
+      <div class="card-header">
+        <div class="card-icon"><span class="material-symbols-outlined">sim_card</span></div>
+        <div class="card-title">eSIM Airalo — Costa Rica</div>
+      </div>
+      <div class="card-desc">Tracks eSIM revenue, activations, and promotions by plan and month for the Costa Rica market.</div>
+      <div class="card-foot"><span class="card-cta">Launch Dashboard</span><div class="card-arrow"><span class="material-symbols-outlined">arrow_forward</span></div></div>
+    </a>
+
+    <a class="card-rc reveal d2" href="https://app.powerbi.com/groups/556d127a-4d43-4e74-a5be-e72aac755b09/reports/9e297d5e-e068-418b-91fe-4838d4b75232/fd46124466c2660c52c0?experience=power-bi" target="_blank">
+      <div class="card-header">
+        <div class="card-icon"><span class="material-symbols-outlined">bar_chart</span></div>
+        <div class="card-title">eSIM Airalo CWC — Executive Summary</div>
+      </div>
+      <div class="card-desc">Provisioned eSIMs, conversion rate, revenue, and plan performance across Bahamas, Cayman, and Jamaica.</div>
+      <div class="card-foot"><span class="card-cta">Launch Dashboard</span><div class="card-arrow"><span class="material-symbols-outlined">arrow_forward</span></div></div>
+    </a>
+
+  </div>
 </div>
 
 <script>
